@@ -3,19 +3,20 @@ import logging as rel_log
 import os
 import shutil
 from datetime import timedelta
-
 import torch
 from flask import *
-
 import core.main
 import core.net.unet as net
 
-UPLOAD_FOLDER = r'./uploads'
+# 设置 pytorch 的 pth 模型路径
+model_path = "../CTAI_model/best_unet_model.pth"
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ALLOWED_EXTENSIONS = set(['dcm'])
 app = Flask(__name__)
 app.secret_key = 'secret!'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = './uploads'
 
 werkzeug_logger = rel_log.getLogger('werkzeug')
 werkzeug_logger.setLevel(rel_log.ERROR)
@@ -87,17 +88,24 @@ def show_photo(file):
 
 
 def init_model():
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = net.Unet(1, 1).to(device)
     if torch.cuda.is_available():
-        model.load_state_dict(torch.load("./core/net/model.pth"))
+        model.load_state_dict(torch.load(model_path))
     else:
-        model.load_state_dict(torch.load("./core/net/model.pth", map_location='cpu'))
+        model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
     return model
 
 
 if __name__ == '__main__':
+
+    # 创建需要的临时目录
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    os.makedirs('./tmp/ct', exist_ok=True)
+    os.makedirs('./tmp/image/', exist_ok=True)
+    os.makedirs('./tmp/mask/', exist_ok=True)
+    os.makedirs('./tmp/draw/', exist_ok=True)
+
     with app.app_context():
         current_app.model = init_model()
     app.run(host='127.0.0.1', port=5003, debug=True)

@@ -1,0 +1,11 @@
+Flask
+Werkzeug
+pandas
+numpy==1.23.0
+Pillow
+SimpleITK
+matplotlib
+numba==0.50.1
+pydicom
+opencv-python==3.4.8.29
+onnxruntime

@@ -4,6 +4,9 @@ import numpy as np
 from CTAI_model.net import unet
 import SimpleITK as sitk
 
+
+model_path = "../CTAI_model/best_unet_model.pth"
+
 device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
 
 
@@ -30,17 +33,19 @@ def get_data(data_path):
 def init_model():
     model = unet.Unet(1, 1).to(device)
     if torch.cuda.is_available():
-        model.load_state_dict(torch.load("./model.pth", map_location=device))
+        model.load_state_dict(torch.load(model_path, map_location=device))
     else:
-        model.load_state_dict(torch.load("./model.pth", map_location='cpu'))
+        model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
     return model
 
 
 def main():
-    data = get_data('20014.dcm').to(device)
+    # data = get_data("20014.dcm").to(device)
+    data = torch.randn([1, 1, 512, 512])
     model = init_model()
-    torch.onnx.export(model, data, "unet.onnx")
+    torch.onnx.export(model, data, "best_unet_model.onnx")
+    print("model exported !")
 
 
 if __name__ == '__main__':

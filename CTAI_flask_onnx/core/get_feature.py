@@ -47,6 +47,11 @@ def glcm(img_gray, ngrad=16, ngray=16):
     get_glcm_features(gray_grad)
 
 
+from numba import NumbaWarning
+import warnings
+# 忽略所有 Numba 警告
+warnings.filterwarnings("ignore", category=NumbaWarning)
+
 @jit
 def get_gray_feature():
     # 灰度特征提取算法
