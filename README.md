@@ -10,11 +10,9 @@
 
 ## 觉得不错欢迎给star⭐哦
 
-## ~~在线demo http://ct.xmzj.xyz/ 服务器到期~~
-
 
 ## 环境
-- Python 3.8.10: **PyTorch 1.10.0 , OpenCV 3, Flask , TensorRT 8.5.1.7**
+- Python 3.8.10: **PyTorch 1.10.0 , OpenCV 3, Flask, onnxruntime**
 - Node: axios , ElementUI , ECharts
 - Vue: Vue CLI
 - Chrome（内核版本60以上）
