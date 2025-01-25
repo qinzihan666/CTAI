@@ -53,7 +53,7 @@ CTAI
 
 ## 开发环境
 - **Python 3.8**: **PyTorch 1.10.0** , OpenCV 3, Flask, onnxruntime
-- Node: axios , ElementUI , ECharts
+- **Node 22**: axios , ElementUI , ECharts
 - Vue: Vue-cli
 - Chrome（内核版本60以上）
 
@@ -95,7 +95,10 @@ gevent                      # 只有使用onnx在cpu上进行生产环境部署�
 - Linux: 
 
   ```bash
-  sudo apt update && sudo apt install nodejs npm -y
+  # Download and install fnm:
+  curl -o- https://fnm.vercel.app/install | bash
+  # Download and install Node.js:
+  fnm install 22
   ````
   
 ### 安装Vue依赖
@@ -178,20 +181,24 @@ CTAI
 
 - 在服务器安装 `python 3.8` 和依赖包，此处**不需要安装pytorch**
 ```bash
-sudo apt update && sudo apt install python3.8 -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt install python3.8 python3.8-distutils -y
 cd CTAI
-pip install -r requirements.txt
+python3.8 -m pip install -r requirements.txt
 ```
 
 - 在服务器安装 `node` 和 `npm`
 ```bash
-sudo apt update && sudo apt install nodejs npm -y
+# Download and install fnm:
+curl -o- https://fnm.vercel.app/install | bash
+# Download and install Node.js:
+fnm install 22
 ```
 
 - 在服务器后台运行python服务
 ```bash
 cd CTAI_flask_onnx
-nohup python app_onnx.py > app_onnx.log 2>&1 &
+nohup python3.8 app_onnx.py > app_onnx.log 2>&1 &
 ```
 
 - 在服务器使用`PM2`启动和管理Vue服务
