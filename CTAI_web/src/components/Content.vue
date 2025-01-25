@@ -321,7 +321,6 @@
         name: "Content",
         data() {
             return {
-                // server_url:'http://58.87.66.50:5003',
                 server_url:'http://127.0.0.1:5003',
                 perimeter_picture_data: 0,
                 area_picture_data: 0,
@@ -355,8 +354,8 @@
                     ID: "20190001",
                     姓名: "李明",
                     性别: "男",
-                    年龄: "29",
-                    电话: "13220986785",
+                    年龄: "28",
+                    电话: "13812345678",
                     部位: "直肠"
                 }
             };
@@ -371,14 +370,14 @@
             true_upload2() {
                 this.$refs.upload2.click();
             },
-            handleClose(done) {
-                this.$confirm("确认关闭？")
-                    .then(_ => {
-                        done();
-                    })
-                    .catch(_ => {
-                    });
-            },
+            // handleClose(done) {
+            //     this.$confirm("确认关闭？")
+            //         .then(_ => {
+            //             done();
+            //         })
+            //         .catch(_ => {
+            //         });
+            // },
             next() {
                 this.active++;
             },
@@ -601,7 +600,7 @@
                         });
                     });
             },
-            // 下载 点击按钮 从远程接口获取文件
+            // 下载 点击按钮从服务器获取文件
             downTemplate() {
                 axios({
                     method: "get",
