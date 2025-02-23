@@ -51,64 +51,6 @@ CTAI
 ```
 
 
-## 开发环境
-- **Python 3.8**: **PyTorch 1.10.0** , OpenCV 3, Flask, onnxruntime
-- **Node 22**: axios , ElementUI , ECharts
-- Vue: Vue-cli
-- Chrome（内核版本60以上）
-
-
-### 安装 PyTorch 1.10.0
-- CUDA 11.1
-```bash
-pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
-
-- CUDA 10.2
-```bash
-pip install torch==1.10.0+cu102 torchvision==0.11.0+cu102 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
-- CPU only
-```bash
-pip install torch==1.10.0+cpu torchvision==0.11.0+cpu torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
-
-### 安装python依赖包
-```bash
-pip install -r requirements.txt
-```
-
-注意，在 requirements.txt 中:
-```plain
-numpy==1.23.0               # 差不多相近的版本就行，不能太新
-opencv-python==3.4.8.29     # 差不多相近的版本就行，不能用 4.x 版本的
-onnxruntime                 # 只有使用onnx在cpu上进行生产环境部署时使用
-gevent                      # 只有使用onnx在cpu上进行生产环境部署时使用
-```
-
-### 安装Node环境
-
-- Windows:  
- 
-  [官网下载安装](https://nodejs.org/dist/v22.13.1/node-v22.13.1-x64.msi)
-
-- Linux: 
-
-  ```bash
-  # Download and install fnm:
-  curl -o- https://fnm.vercel.app/install | bash
-  # Download and install Node.js:
-  fnm install 22
-  ````
-  
-### 安装Vue依赖
-
-```bash
-cd CTAI_web
-npm install -g @vue/cli
-npm install -g yarn
-yarn instal
-```
 
 ## 数据集下载
 
@@ -135,20 +77,31 @@ cd CTAI_model
 python train.py
 ```
 
-## 开发环境运行
+## 本地开发环境运行步骤
+CTAI_flask_onnx（cpu）与CTAI_flask_torch(gpu)二选一即可
+如果自己训练的模型对照项目结构放到训练好的路径即可
+如果用原作者训练的模型把模型下载好放到对应的路径
+  下载路径
+  [pth模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.pth)
 
-启动Vue前端渲染服务
-```bash
-cd CTAI_web
-npm run serve
-```
+  [onnx模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.onnx)
+
 启动后端flask服务
 ```bash
 cd CTAI_flask_torch
 python app.py
 ```
 
-## 生产环境部署
+考虑到配置前端时node_modules比较大下载缓慢，作者这里提前准备好了存到百度网盘下载放到对应路径即可
+
+启动Vue前端渲染服务
+```bash
+cd CTAI_web
+npm run serve
+```
+
+
+## 自己配置服务器时生产环境部署
 
 - 进行模型转换, pth --> onnx
 ```bash
@@ -235,11 +188,6 @@ pm2 reload  [id]
 pm2 delete [id]
 ```
 
-## 模型权重下载
-
-[pth模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.pth)
-
-[onnx模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.onnx)
 
 ## 模型介绍
 训练的数据来源于国外的数据集。因数据和精力有限只训练了针对直肠肿瘤模型。首先对CT文件进行整理，使用SimpleITK读取CT文件，读取肿瘤的掩膜文件并映射到肿瘤CT图像来获取肿瘤区域，然后进行数据的归一化，预处理后制作训练和测试的数据集。
@@ -255,7 +203,7 @@ pm2 delete [id]
 后端运行流程如下：  
 <img width="60%" height="60%" src="https://github.com/xming521/picture/blob/master/图片1.png"/>  
 
-目录管理：  
+项目运行后的目录介绍：  
 |  目录   | 功能  |
 |  ----  | ----  |
 | uploads	| 		直接上传目录   | 
