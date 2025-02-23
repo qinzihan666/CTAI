@@ -5,6 +5,7 @@
 医生只需通过web上传ct图像文件，后台就会使用训练好的模型进行肿瘤区域的分割，然后将勾画好肿瘤区域的图像返回，还有肿瘤区域的一些特征（如面积、周长、强度等），并且提供前几次诊断的特征数据并绘制成图表进行对比来辅助医生诊断。  
 <img width="600" height="100" src="https://github.com/xming521/picture/blob/master/QQ截图20200218193846.png"/>
 
+本项目备份好了environment backup.yml虚拟环境和requirements backup.txt依赖包，无脑fork就可以一键运行
 
 ## 觉得不错欢迎给star⭐哦
 
@@ -47,7 +48,8 @@ CTAI
 │   ├── vue.config.js
 │   └── yarn.lock
 ├── README.md
-└── requirements.txt
+└── environment backup.yml
+└── requirements backup.txt
 ```
 
 
@@ -94,6 +96,11 @@ python app.py
 ```
 
 考虑到配置前端时node_modules比较大下载缓慢，作者这里提前准备好了存到百度网盘下载放到对应路径即可
+下载路径
+
+通过网盘分享的文件：node_modules
+链接: https://pan.baidu.com/s/1jmZK-mxKeNq2E2cCXvKt8A?pwd=5cmq 提取码: 5cmq 
+--来自百度网盘超级会员v6的分享
 
 启动Vue前端渲染服务
 ```bash
@@ -130,7 +137,8 @@ CTAI
 │   └── to_oonx.py
 ├── CTAI_web
 │   └── dist
-└── requirements.txt
+└── environment backup.yml
+└── requirements backup.txt
 ```
 
 - 在服务器安装 `python 3.8` 和依赖包，此处**不需要安装pytorch**
