@@ -88,6 +88,7 @@ python train.py
 CTAI_flask_onnx（cpu）与CTAI_flask_torch(gpu)二选一即可
 如果自己训练的模型对照项目结构放到训练好的路径即可
 如果用原作者训练的模型把模型下载好放到对应的路径
+
   下载路径
 
   通过网盘分享的文件：CTAI模型
