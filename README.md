@@ -89,10 +89,10 @@ CTAI_flask_onnx（cpu）与CTAI_flask_torch(gpu)二选一即可
 如果自己训练的模型对照项目结构放到训练好的路径即可
 如果用原作者训练的模型把模型下载好放到对应的路径
   下载路径
-  
-  [pth模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.pth)
 
-  [onnx模型](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.onnx)
+  通过网盘分享的文件：CTAI模型
+链接: https://pan.baidu.com/s/1POSMfXKaVzjijS9cql0IqA?pwd=rx4b 提取码: rx4b 
+--来自百度网盘超级会员v6的分享
 
 启动后端flask服务
 ```bash
