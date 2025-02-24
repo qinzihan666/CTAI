@@ -102,7 +102,9 @@ python app.py
 
 考虑到配置前端时node_modules比较大下载缓慢，作者这里提前准备好了存到百度网盘下载放到对应路径即可
 
+
 下载路径
+
 
 通过网盘分享的文件：node_modules
 链接: https://pan.baidu.com/s/1jmZK-mxKeNq2E2cCXvKt8A?pwd=5cmq 提取码: 5cmq 
