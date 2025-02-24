@@ -5,10 +5,15 @@
 医生只需通过web上传ct图像文件，后台就会使用训练好的模型进行肿瘤区域的分割，然后将勾画好肿瘤区域的图像返回，还有肿瘤区域的一些特征（如面积、周长、强度等），并且提供前几次诊断的特征数据并绘制成图表进行对比来辅助医生诊断。  
 <img width="600" height="100" src="https://github.com/xming521/picture/blob/master/QQ截图20200218193846.png"/>
 
-本项目备份好了environment backup.yml虚拟环境和requirements backup.txt依赖包，无脑fork就可以一键运行
+本项目优化并解决了关于环境适配，前端界面无法上传文件，卡死在进度99%等问题：
+1.备份好了environment backup.yml虚拟环境和requirements backup.txt依赖包，修改了无脑fork就可以一键运行
+2.解决了在 process.py 文件中的 last_process 函数和get_feature.py 文件中的get_geometry_feature 函数，使用了 cv2.findContours 函数，但是函数的返回值解包不正确问题（在 OpenCV 4.x 版本中，cv2.findContours 只返回两个值：轮廓和层次结构，而不是三个值：阈值、轮廓和层次结构。但是原代码中试图解包三个值）
+3.修复了Content.vue下载功能使用的是 localhost:5003，而上传功能使用的是 this.server_url不一致的问题，增加了下载失败的返回结果
 
 ## 觉得不错欢迎给star⭐哦
 
+
+## 注意事项
 ## 项目结构
 
 ```plain
