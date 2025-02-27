@@ -241,3 +241,10 @@ pm2 delete [id]
 <img width="60%" height="60%" src="https://github.com/xming521/picture/blob/master/图片32.png"/>
 <img width="60%" height="60%" src="https://github.com/xming521/picture/blob/master/图片31.png"/>
 <img width="60%" height="60%" src="https://github.com/xming521/picture/blob/master/图片2(1).png"/>
+
+## 贡献者
+
+这个项目由以下人员共同创建：
+
+- [qinzihan666](https://github.com/qinzihan666) 
+- [Caoyan-qzh](https://github.com/Caoyan-qzh) 
