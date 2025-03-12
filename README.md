@@ -65,15 +65,6 @@ CTAI
 └──test_upload.py
 
 
-
-## 数据集下载
-
-通过网盘分享的文件：直肠癌数据.7z
-链接: https://pan.baidu.com/s/1ePpIVhsN2YNYezhSZPfPlQ?pwd=33xc 提取码: 33xc 
---来自百度网盘超级会员v6的分享
-
-由原作者提供，致谢！
-
 ## 模型训练
 
 进入`CTAI_model`目录，修改`train.py`中的数据集路径和训练参数：
@@ -94,6 +85,19 @@ learn_rate = 0.001      # 学习率（不建议修改）
 cd CTAI_model
 python train.py
 ```
+
+
+
+## 数据集下载
+
+通过网盘分享的文件：直肠癌数据.7z
+链接: https://pan.baidu.com/s/1ePpIVhsN2YNYezhSZPfPlQ?pwd=33xc 提取码: 33xc 
+--来自百度网盘超级会员v6的分享
+
+由原作者提供，致谢！
+
+
+
 
 ## 本地开发环境运行步骤
 CTAI_flask_onnx（cpu）与CTAI_flask_torch(gpu)二选一即可
