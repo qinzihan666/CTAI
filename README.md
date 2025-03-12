@@ -68,7 +68,11 @@ CTAI
 
 ## 数据集下载
 
-[下载地址](https://share.weiyun.com/5eS2jDk)，由原作者提供，致谢！
+通过网盘分享的文件：直肠癌数据.7z
+链接: https://pan.baidu.com/s/1ePpIVhsN2YNYezhSZPfPlQ?pwd=33xc 提取码: 33xc 
+--来自百度网盘超级会员v6的分享
+
+由原作者提供，致谢！
 
 ## 模型训练
 
