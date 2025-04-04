@@ -1,35 +1,38 @@
 <template>
-
   <div id="app">
-    <app-header></app-header>
-    <app-content></app-content>
-    <app-footer></app-footer>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Content from './components/Content'
 export default {
-  name: "肿瘤辅助诊断系统",
-  data() {
-    return {
-
-    }
-  },
-  components:{
-    "app-header":Header,
-    "app-footer":Footer,
-    "app-content":Content
-  },
-  methods: {
-
-  },
-
-};
+  name: 'App',
+  created() {
+    // 设置不显示欢迎弹窗
+    localStorage.setItem('hideWelcomeDialog', 'true');
+  }
+}
 </script>
 
-<style scope="this api replaced by slot-scope in 2.5.0+">
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+}
 
+#app {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 </style>
