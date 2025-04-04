@@ -1,0 +1,58 @@
+# 前端依赖
+/CTAI_web/node_modules/
+/CTAI_web/dist/
+/CTAI_web/yarn-error.log
+/CTAI_web/yarn.lock
+/CTAI_web/npm-debug.log
+
+# IDE相关
+/.idea/
+/.vscode/
+*.sublime-*
+.DS_Store
+
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 临时文件和用户上传
+/tmp/
+/uploads/
+
+# 测试文件
+test_*.py
+*_test.py
+
+# 敏感配置信息
+.env
+.env.*
+*.pem
+*.key
+
+# 日志文件
+*.log
+logs/
+log/
+
+# 模型和大文件（可以使用Git LFS管理）
+*.pth
+*.h5
