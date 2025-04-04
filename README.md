@@ -198,8 +198,9 @@ api_key = "your_api_key_here"
 
 ## 📦 资源下载
 
-- [测试数据集](https://share.weiyun.com/5eS2jDk)
-- [PyTorch模型下载](http://47.237.94.141:5244/%E6%95%B0%E6%8D%AE/best_unet_model.pth)
+- [数据集，模型及前端依赖](通过网盘分享的文件：CTAI
+链接: https://pan.baidu.com/s/11dY17RvkOeAZfK1AFulj0Q?pwd=pghu 提取码: pghu 
+--来自百度网盘超级会员v6的分享)
 
 ## 🔧 模型说明
 本项目使用U-Net架构进行肿瘤分割。U-Net是一种广泛应用于医学图像分割的卷积神经网络架构，其特点是对称的编码器-解码器结构和跳跃连接。
